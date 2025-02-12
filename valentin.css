@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background-color: #8a2be2;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 5px rgba(138, 43, 226, 0.8);
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    transition: all 0.5s ease;
+}
+
+/* Título */
+h1 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#siBtn {
+    background-color: white; 
+    color: #8a2be2;
+}
+
+#noBtn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Mensaje oculto */
+.hidden {
+    display: none;
+}
+
+#mensaje {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff; 
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.container.agrandado {
+    padding: 40px;
+    transform: scale(1.1);
+}
+
+#mensaje.mostrado {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+/* Flores decorativas */
+.flower {
+    position: absolute;
+    font-size: 40px;
+    animation: float 5s infinite ease-in-out;
+    user-select: none;
+}
+
+.flower-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.flower-2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.flower-3 {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.flower-4 {
+    bottom: 5%;
+    right: 5%;
+    animation-delay: 6s;
+}
+
+.flower-5 {
+    top: 5%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.flower-6 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+.flower-7 {
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
