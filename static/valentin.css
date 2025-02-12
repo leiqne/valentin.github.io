@@ -8,8 +8,10 @@ body {
     margin: 0;
     overflow: hidden;
     position: relative;
+    padding: 20px;
 }
 
+/* Contenedor principal */
 .container {
     text-align: center;
     background-color: #8a2be2;
@@ -18,6 +20,7 @@ body {
     box-shadow: 0 0 20px 5px rgba(138, 43, 226, 0.8);
     border: 1px solid rgba(138, 43, 226, 0.5);
     transition: all 0.5s ease;
+    max-width: 90%;
 }
 
 /* Título */
@@ -30,20 +33,24 @@ h1 {
 /* Botones */
 .buttons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 button {
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 12px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 120px;
 }
 
 #siBtn {
-    background-color: white; 
+    background-color: white;
     color: #8a2be2;
 }
 
@@ -64,9 +71,9 @@ button:hover {
 #mensaje {
     margin-top: 20px;
     font-size: 18px;
-    color: #fff; 
+    color: #fff;
     opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease; 
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .container.agrandado {
@@ -76,7 +83,7 @@ button:hover {
 
 #mensaje.mostrado {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
 }
 
 /* Flores decorativas */
@@ -87,53 +94,49 @@ button:hover {
     user-select: none;
 }
 
-.flower-1 {
-    top: 10%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.flower-2 {
-    top: 20%;
-    right: 10%;
-    animation-delay: 2s;
-}
-
-.flower-3 {
-    bottom: 15%;
-    left: 15%;
-    animation-delay: 4s;
-}
-
-.flower-4 {
-    bottom: 5%;
-    right: 5%;
-    animation-delay: 6s;
-}
-
-.flower-5 {
-    top: 5%;
-    left: 20%;
-    animation-delay: 1s;
-}
-
-.flower-6 {
-    top: 30%;
-    right: 20%;
-    animation-delay: 3s;
-}
-
-.flower-7 {
-    bottom: 10%;
-    left: 30%;
-    animation-delay: 5s;
-}
+.flower-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.flower-2 { top: 20%; right: 10%; animation-delay: 2s; }
+.flower-3 { bottom: 15%; left: 15%; animation-delay: 4s; }
+.flower-4 { bottom: 5%; right: 5%; animation-delay: 6s; }
+.flower-5 { top: 5%; left: 20%; animation-delay: 1s; }
+.flower-6 { top: 30%; right: 20%; animation-delay: 3s; }
+.flower-7 { bottom: 10%; left: 30%; animation-delay: 5s; }
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+/* Dispositivos pequeños (menos de 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        max-width: 60%;
     }
-    50% {
-        transform: translateY(-20px);
+
+    h1 {
+        font-size: 20px;
+    }
+
+
+    .flower {
+        font-size: 30px;
     }
 }
+
+/* Tablets (600px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 60%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+    .flower {
+        font-size: 35px;
+    }
+}
+    
